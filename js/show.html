@@ -1,0 +1,12 @@
+<h2>Songs Show</h2>
+
+<img data-ng-src="{{ SongShowViewModel.song.album_art }}" src="#" />
+<h3>{{ SongShowViewModel.song.title }}</h3>
+<h3>{{ SongShowViewModel.song.artist }}</h3>
+<p>{{ SongShowViewModel.song.genre }}</p>
+<a href="{{ SongShowViewModel.song.audio_url }}">Play Song</a>
+<!-- <audio controls>
+  <source src="{ SongShowViewModel.song.audio_url }}" type="audio/mp4">
+</audio> -->
+
+<!-- <audio controls autoplay ng-src="{{song.encodedUrl}}"></audio> -->
