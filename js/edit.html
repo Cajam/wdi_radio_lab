@@ -1,12 +1,5 @@
 <h2>Edit a new song</h2>
 
-
-<form>
-  <input placeholder="Title" data-ng-model="SongEditViewModel.song.title" />
-  <input placeholder="Artist name" data-ng-model="SongEditViewModel.song.artist" />
-  <input placeholder="Album Art URL" data-ng-model="SongEditViewModel.song.album_art" />
-  <input placeholder="Audio URL" data-ng-model="SongEditViewModel.song.audio_url" />
-  <input placeholder="Genre" data-ng-model="SongEditViewModel.song.genre"></textarea>
-  <button data-ng-click="SongEditViewModel.update()">Save</button>
-  <button data-ng-click="SongEditViewModel.destroy()">Delete</button>
-</form>
+<div>
+  <song-form data-song="SongEditViewModel.song"></song-form>
+</div>

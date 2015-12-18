@@ -1,8 +1,14 @@
 <form>
-  <input placeholder="Title" data-ng-model="SongNewViewModel.song.title" />
-  <input placeholder="Artist name" data-ng-model="SongNewViewModel.song.artist" />
-  <input placeholder="Album Art URL" data-ng-model="SongNewViewModel.song.album_art" />
-  <input placeholder="Audio URL" data-ng-model="SongNewViewModel.song.audio_url" />
-  <input placeholder="Genre" data-ng-model="SongNewViewModel.song.genre" />
-  <button type="button" data-ng-click="SongNewViewModel.create()">Create</button>
+  <input type="text" placeholder="Title" name="title" ng-model="song.title">
+  <input type="text" placeholder="Artist" name="artist" ng-model="song.artist">
+  <input type="text" placeholder="Album Art URL" name="album" ng-model="song.album_art">
+  <input type="text" placeholder="Audio URL" name="audio" ng-model="song.audio_url">
+  <input type="text" placeholder="Genre" name="genre" ng-model="song.genre">
+  <div ng-show="formType == 'edit'">
+    <a data-ui-sref="songShow({id: song.id})">&larr; Back</a>
+    <button ng-click="update()">Save</button>
+  </div>
+  <div ng-show="formType == 'new'">
+    <button ng-click="create()">New Song</button>
+  </div>
 </form>
