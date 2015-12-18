@@ -4,17 +4,28 @@
   angular
   .module("radio",[
     "ui.router",
+    "ng-token-auth",
     "songs"
+  ])
+  .config([
+    "$authProvider",
+    AuthConfigFunction
   ])
   .config([
     "$stateProvider",
     RouterFunction
   ]);
 
+  function AuthConfigFunction($authProvider) {
+    $authProvider.configure({
+      apiUrl: "http://localhost.3000"
+    });
+  }
+
   function RouterFunction($stateProvider){
     $stateProvider
     .state("songIndex", {
-      url:"/welcome",
+      url:"/index",
       templateUrl: "./js/index.html",
       controller: "SongIndexController",
       controllerAs: "SongIndexViewModel"
@@ -36,6 +47,18 @@
       templateUrl: "./js/show.html",
       controller: "SongShowController",
       controllerAs: "SongShowViewModel"
+    })
+    .state("signin", {
+      url: "/signin",
+      templateUrl: "js/signin.html",
+      controller: "SessionsController",
+      controllerAs: "SessionsViewModel"
+    })
+    .state("signout", {
+      url: "/signout",
+      templateUrl: "js/signout.html",
+      controller: "SessionsController",
+      controllerAs: "SessionsViewModel"
     });
   }
 }());
