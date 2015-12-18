@@ -29,6 +29,13 @@
       .catch(function(resp) {
         console.log(resp);
       });
-    }
+    };
+
+    $scope.$on('$stateChangeSuccess',
+        function(event, toState, toParams, fromState, fromParams){
+          if(toState.name == 'signout') {
+            $auth.signOut();
+          }
+      });
   });
 })();
