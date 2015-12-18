@@ -4,8 +4,8 @@
   angular
   .module("songs")
   .directive("songForm", [
-    "$state",
     "SongFactory",
+    "$state",
     SongFormDirectiveFunction
   ]);
 

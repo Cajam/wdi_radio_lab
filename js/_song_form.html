@@ -4,11 +4,9 @@
   <input type="text" placeholder="Album Art URL" name="album" data-ng-model="song.album_art">
   <input type="text" placeholder="Audio URL" name="audio" data-ng-model="song.audio_url">
   <input type="text" placeholder="Genre" name="genre" data-ng-model="song.genre">
-  <div data-ng-show="formType == 'edit'">
-    <a data-ui-sref="songShow({id: song.id})">&larr; Back</a>
-    <button data-ng-click="update()">Save</button>
-  </div>
-  <div data-ng-show="formType == 'new'">
-    <button data-ng-click="create()">New Song</button>
+  <button type="button" data-ng-if="!song.id" data-ng-click="create()">Create</button>
+  <div data-ng-if="song.id">
+    <button type="button" data-ng-click="update()">Update</button>
+    <button type="button" data-ng-click="delete()">Delete</button>
   </div>
 </form>
